@@ -4,3 +4,6 @@ test.sh
 nvim
 lazy-lock.json
 .stylua.toml
+*.pdb
+undodir/
+/~/
