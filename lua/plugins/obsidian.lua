@@ -19,18 +19,28 @@ return {
       name = "telescope.nvim"
     },
     image = {
-      resolve = function (path, src)
+      resolve = function(path, src)
         local api = require "obsidian.api"
         if api.path_is_note(path) then
           return api.resolve_attachment_path(src)
         end
       end,
     },
+    link = {
+      auto_update = true,
+    },
     daily_notes = {
       enabled = true,
       folder = "Dailies",
       date_format = "YYYY/YYYY-MM-DD",
-      default_tags = {"journal", "daily"},
-    }
+      default_tags = { "journal", "daily" },
+    },
   },
+  config = function()
+    vim.api.nvim_create_user_command("Notes", function()
+      -- local api = require("obsidian.api")
+      -- local workspace = require("obsidian.workspace")
+      -- print(tostring(api.resolve_workspace_dir()))
+    end, { desc = "Open Home.md in the Obsidian vault " })
+  end
 }
