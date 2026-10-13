@@ -146,6 +146,10 @@ vim.api.nvim_create_user_command('SudoWrite', function()
   vim.cmd('edit!')                                                                          -- Force reload the file
 end, {})
 
+vim.api.nvim_create_user_command("Notes", function()
+  vim.cmd("edit /home/mmmaellon/Documents/Obsidian Vault/Home.md")
+end, {})
+
 vim.keymap.set('n', '<leader><Enter>', function()
   -- Get the current file's directory
   local cwd = vim.fn.expand('%:p:h')

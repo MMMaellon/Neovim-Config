@@ -36,11 +36,4 @@ return {
       default_tags = { "journal", "daily" },
     },
   },
-  config = function()
-    vim.api.nvim_create_user_command("Notes", function()
-      -- local api = require("obsidian.api")
-      -- local workspace = require("obsidian.workspace")
-      -- print(tostring(api.resolve_workspace_dir()))
-    end, { desc = "Open Home.md in the Obsidian vault " })
-  end
 }
